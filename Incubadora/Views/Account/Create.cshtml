@@ -1,0 +1,96 @@
+﻿
+@{
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<noscript>
+    <meta http-equiv="refresh" content="0;URL=@Url.Action("NoScript", "Error")" />
+</noscript>
+<div class="bs-container" style="min-height:960px;">
+    <section class="content-header">
+        <h1>
+            Seguridad
+            <small>(Agregar)</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"> <i class="fa fa-dashboard"></i>Seguridad </a></li>
+            <li> <a href="#">Agregar</a></li>
+            <li class="active"> Usuarios </li>
+        </ol>
+    </section>
+    <br />
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="box box-success">
+                <div class="box-header with-border">
+                    <h5 class="box-title">
+                        <label class="text-success emailtitleletter">
+                            <i class="text-success fa fa-graduation-cap"></i>
+                            @User.Identity.Name (@ViewBag.Role)
+                        </label>&nbsp;
+                    </h5>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body ">
+                    <div class="row">
+                        <div class="col-md-12 container-fluid">
+                            <div class="col-xs-12 col-sm-12 col-md-6  col-lg-6 container-fluid">
+                                <button value="Nuevo" class="container-fluid btn btn-sm btn-success" id="btnNuevo" data-toggle="modal" data-target="#windowModal">Nuevo Usuario</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Establecemos el Modal que se va a presentar cuando demos click en la edicion de los datos-->
+        <div class="modal fade" id="windowModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header modal-title-specific">
+                        <!--style="background-color:#3C8DBC;color:white;"-->
+                        <a href="#" class="close" data-dismiss="modal">&times;</a>
+                        <h5 class="modal-title"><label style="font-size:medium;">Agregar Usuario</label></h5>
+                    </div>
+                    <div class="modal-body" id="ModalBody">
+                        <form id="frmGuardar" method="post">
+                            <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11">
+                                <div class="form-group has-feedback">
+                                   <input type="text" placeholder="Ingresa el nombre de Usuario" class="form-control input-sm" id="txtNombreUsuario" required />
+                                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <input type="password" placeholder="Ingresa el Password" class="form-control input-sm" id="txtPassword" required />
+                                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                </div>
+                                <hr />
+                                <button type="submit" class="pull-right btn btn-sm btn-success">Guardar</button>
+                            </div>
+                            <div class="modal-footer"></div>
+                        </form>
+                    </div>
+                   
+                </div>
+                
+            </div>
+        </div>
+        <input type="hidden" id="hiddenSolicitudId" />
+        <!--Terminamos el modal de eliminacion-->
+    </div>
+</div>
+<script src="~/Content/js/plugins/jquery/jquery-3.3.1.min.js"></script>
+<script>
+
+    $(window).on('load', function () {
+        $('#windowModal').modal({ backdrop: 'static', keyboard: false });
+    });
+
+   
+    
+</script>
