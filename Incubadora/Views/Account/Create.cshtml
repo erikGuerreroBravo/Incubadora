@@ -26,7 +26,7 @@
                 <div class="box-header with-border">
                     <h5 class="box-title">
                         <label class="text-success emailtitleletter">
-                            <i class="text-success fa fa-graduation-cap"></i>
+                            <i class="text-success fas fa-user-check"></i>
                             @User.Identity.Name (@ViewBag.Role)
                         </label>&nbsp;
                     </h5>
@@ -39,15 +39,39 @@
                 <div class="box-body ">
                     <div class="row">
                         <div class="col-md-12 container-fluid">
-                            <div class="col-xs-12 col-sm-12 col-md-6  col-lg-6 container-fluid">
-                                <button value="Nuevo" class="container-fluid btn btn-sm btn-success" id="btnNuevo" data-toggle="modal" data-target="#windowModal">
-                                    <span class="glyphicon glyphicon-user"></span>
-                                    Nuevo Usuario
-                                </button>
-                                <button value="Roles" class="container-fluid btn btn-sm btn-success" id="btnRoles">
-                                    <span class="glyphicon glyphicon-edit"></span>
-                                    Agregar Roles
-                                </button>
+                            <div class="col-xs-12 col-sm-12 col-md-9  col-lg-9 container-fluid">
+                                <ul class="list-group list-inline list-unstyled list-group-unbordered">
+                                    <li class="list-group-item list-unstyled list-group-unbordered">
+                                        <button value="Nuevo" class="container-fluid btn btn-sm btn-default" id="btnNuevo" data-toggle="modal" data-target="#windowModal">
+                                            <span class="glyphicon glyphicon-user"></span>
+                                            Nuevo Usuario
+                                        </button>
+                                    </li>
+                                    <li class="list-group-item list-unstyled list-group-unbordered">
+                                        <button value="Roles" class="container-fluid btn btn-sm btn-default" id="btnRoles">
+                                            <span class="glyphicon glyphicon-edit"></span>
+                                            Agregar Roles
+                                        </button>
+                                    </li>
+                                    <li class="list-group-item list-unstyled list-group-unbordered">
+                                        <button value="Roles" class="container-fluid btn btn-sm btn-default" id="btnPerfiles">
+                                            <i class="fas fa-users-cog"></i>
+                                            Agregar Perfiles
+                                        </button>
+                                    </li>
+                                    <li class="list-group-item list-unstyled list-group-unbordered">
+                                        <button value="Roles" class="container-fluid btn btn-sm btn-danger" id="btnPerfiles">
+                                            <i class="fas fa-user-times"></i>
+                                            Desactivar Cuentas
+                                        </button>
+                                    </li>
+                                    <li class="list-group-item list-unstyled list-group-unbordered">
+                                        <button value="Roles" class="container-fluid btn btn-sm btn-primary" id="btnPerfiles">
+                                            <i class="fas fa-users"></i>
+                                            Activar Cuentas
+                                        </button>
+                                    </li>
+                                </ul>
                             </div>
 
                         </div>
@@ -68,7 +92,7 @@
                     <div class="modal-body" id="ModalBody">
                         <form id="frmGuardar" method="post">
                             <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11">
-                                <div class="form-group has-feedback">
+                                <div class="form-group  has-feedback">
                                    <input type="text" placeholder="Ingresa el nombre de Usuario" class="form-control input-sm" id="txtNombreUsuario" required />
                                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                                 </div>
