@@ -40,7 +40,14 @@
                     <div class="row">
                         <div class="col-md-12 container-fluid">
                             <div class="col-xs-12 col-sm-12 col-md-6  col-lg-6 container-fluid">
-                                <button value="Nuevo" class="container-fluid btn btn-sm btn-success" id="btnNuevo" data-toggle="modal" data-target="#windowModal">Nuevo Usuario</button>
+                                <button value="Nuevo" class="container-fluid btn btn-sm btn-success" id="btnNuevo" data-toggle="modal" data-target="#windowModal">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                    Nuevo Usuario
+                                </button>
+                                <button value="Roles" class="container-fluid btn btn-sm btn-success" id="btnRoles">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                    Agregar Roles
+                                </button>
                             </div>
 
                         </div>
@@ -68,6 +75,9 @@
                                 <div class="form-group has-feedback">
                                     <input type="password" placeholder="Ingresa el Password" class="form-control input-sm" id="txtPassword" required />
                                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    @Html.DropDownList("IdRol", null,new { @class="form-control input-sm", id="IdRol"})
                                 </div>
                                 <hr />
                                 <button type="submit" class="pull-right btn btn-sm btn-success">Guardar</button>

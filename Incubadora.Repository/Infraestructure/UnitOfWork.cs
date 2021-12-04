@@ -6,7 +6,7 @@ namespace Incubadora.Repository.Infraestructure
     public class UnitOfWork : IUnitOfWork
     {
         private readonly IncubadoraDataBaseEntities _dbContext;
-        
+
         public UnitOfWork()
         {
             _dbContext = new IncubadoraDataBaseEntities();

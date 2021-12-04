@@ -23,11 +23,12 @@ namespace Incubadora.Business
         public List<AspNetRolesDomainModel> GetRoles()
         {
             List<AspNetRolesDomainModel> roles = null;
-            roles = repository.GetAll().Select(p => new AspNetRolesDomainModel { 
-               Id = p.Id,
-               Name = p.Name,
-               NormalizedName = p.NormalizedName,
-               ConcurrencyStamp = p.ConcurrencyStamp
+            roles = repository.GetAll().Select(p => new AspNetRolesDomainModel
+            {
+                Id = p.Id,
+                Name = p.Name,
+                NormalizedName = p.NormalizedName,
+                ConcurrencyStamp = p.ConcurrencyStamp
             }).ToList();
             return roles;
         }

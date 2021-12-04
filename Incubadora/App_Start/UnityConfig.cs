@@ -1,3 +1,7 @@
+using Incubadora.Business;
+using Incubadora.Business.Interface;
+using Incubadora.Repository.Infraestructure;
+using Incubadora.Repository.Infraestructure.Contract;
 using System.Web.Mvc;
 using Unity;
 using Unity.Mvc5;
@@ -9,12 +13,15 @@ namespace Incubadora
         public static void RegisterComponents()
         {
 			var container = new UnityContainer();
-            
+
             // register all your components with the container here
             // it is NOT necessary to register your controllers
-            
+
             // e.g. container.RegisterType<ITestService, TestService>();
+            container.RegisterType<IUnitOfWork, UnitOfWork>();
             
+            container.RegisterType<IAspNetRolesBusiness, AspNetRolesBusiness>();
+
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }

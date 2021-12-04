@@ -1,5 +1,6 @@
 ﻿using Incubadora.App_Start;
 using Incubadora.Controllers;
+using Incubadora.Infraestructure;
 using NLog;
 using System;
 using System.Net;
@@ -17,11 +18,17 @@ namespace Incubadora
         protected void Application_Start()
         {
             Log.Info("Starting up...");
+            UnityConfig.RegisterComponents();
             AreaRegistration.RegisterAllAreas();
+            ///UnityConfig.RegisterComponents();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            AutomaperWebProfile.Run();
 
-            Log.Info("Routes and bundles registered");
+            System.Web.Optimization.BundleTable.EnableOptimizations = true;
+            System.Web.Helpers.AntiForgeryConfig.UniqueClaimTypeIdentifier =
+              System.Security.Claims.ClaimTypes.NameIdentifier;
+            Log.Info("Las rutas y el archivo bundle cargado cone xito");
             Log.Info("Started");
         }
 
@@ -33,7 +40,7 @@ namespace Incubadora
         protected void Application_Error(object sender, EventArgs e)
         {
             var exception = Server.GetLastError();
-            Log.Error(exception, "Unhandled application exception");
+            Log.Error(exception, "No se pudo controlar la excepción al momento de cargar el controlador");
 
             var httpContext = ((HttpApplication)sender).Context;
             httpContext.Response.Clear();

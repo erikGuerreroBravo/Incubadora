@@ -2,11 +2,8 @@
 using Incubadora.Domain;
 using Incubadora.Repository;
 using Incubadora.Repository.Infraestructure.Contract;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Incubadora.Business
 {
@@ -27,14 +24,15 @@ namespace Incubadora.Business
         public List<AspNetUsersDomainModel> GetUsers()
         {
             List<AspNetUsersDomainModel> usuarios = null;
-            usuarios = repository.GetAll().Select(p => new AspNetUsersDomainModel { 
-             Id =p.Id,
-             UserName = p.UserName,
-             NormalizedUserName = p.NormalizedUserName,
-             Email = p.Email,
-             NormalizedEmail = p.NormalizedEmail,
-             PasswordHash = p.PasswordHash,
-             PhoneNumber =p.PhoneNumber
+            usuarios = repository.GetAll().Select(p => new AspNetUsersDomainModel
+            {
+                Id = p.Id,
+                UserName = p.UserName,
+                NormalizedUserName = p.NormalizedUserName,
+                Email = p.Email,
+                NormalizedEmail = p.NormalizedEmail,
+                PasswordHash = p.PasswordHash,
+                PhoneNumber = p.PhoneNumber
             }).ToList();
             return usuarios;
         }
