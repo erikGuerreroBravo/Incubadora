@@ -11,7 +11,9 @@ namespace Incubadora.App_Start
                 .Include("~/Content/css/bootstrap.min.css", new CssRewriteUrlTransformAbsolute())
                 .Include("~/Content/css/bootstrap-select.css")
                 .Include("~/Content/css/admin-modal-style.css")
+                .Include("~/Content/toastr.css")
                 .Include("~/Content/css/bootstrap-datepicker3.min.css")
+                .Include("~/Content/css/tables/dataTables.bootstrap.css")
                 .Include("~/Content/css/font-awesome.min.css", new CssRewriteUrlTransformAbsolute())
                 .Include("~/Content/css/icheck/green.min.css", new CssRewriteUrlTransformAbsolute())
                 .Include("~/Content/css/AdminLTE.css", new CssRewriteUrlTransformAbsolute())
@@ -19,7 +21,8 @@ namespace Incubadora.App_Start
                 );
 
             bundles.Add(new ScriptBundle("~/Bundles/js")
-                .Include("~/Content/js/plugins/jquery/jquery-3.3.1.js")
+                //.Include("~/Content/js/plugins/jquery/jquery-3.3.1.js")
+                //.Include("~/Content/js/plugins/tables/jquery.js")
                 .Include("~/Content/js/plugins/bootstrap/bootstrap.js")
                 .Include("~/Content/js/plugins/fastclick/fastclick.js")
                 .Include("~/Content/js/plugins/slimscroll/jquery.slimscroll.js")
@@ -29,6 +32,8 @@ namespace Incubadora.App_Start
                 .Include("~/Content/js/plugins/icheck/icheck.js")
                 .Include("~/Content/js/plugins/validator/validator.js")
                 .Include("~/Content/js/plugins/inputmask/jquery.inputmask.bundle.js")
+                .Include("~/scripts/toastr.min.js")
+                //.Include("~/Content/js/tables/dataTables.bootstrap.js")
                 .Include("~/Content/js/adminlte.js")
                 .Include("~/Content/js/init.js"));
 

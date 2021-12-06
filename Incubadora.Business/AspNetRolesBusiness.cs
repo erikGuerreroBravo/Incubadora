@@ -2,6 +2,7 @@
 using Incubadora.Domain;
 using Incubadora.Repository;
 using Incubadora.Repository.Infraestructure.Contract;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 namespace Incubadora.Business
@@ -33,6 +34,41 @@ namespace Incubadora.Business
             return roles;
         }
 
-
+        /// <summary>
+        /// Este metodo se encarga de agregar  actualziar un rol
+        /// </summary>
+        /// <param name="aspNetRoles">la entidad AspNetRoles</param>
+        /// <returns>un valor boolean true/false</returns>
+        public bool AddUpdateRol(AspNetRolesDomainModel aspNetRolesDM)
+        {
+            bool respuesta = false;
+            if (aspNetRolesDM != null)
+            {
+                
+                AspNetRoles roles = repository.SingleOrDefault(p => p.Id == aspNetRolesDM.Id);
+                if (roles != null )
+                {
+                    roles.Name = aspNetRolesDM.Name;
+                    roles.NormalizedName = aspNetRolesDM.Name.ToUpper();
+                    roles.ConcurrencyStamp = DateTime.Now.Date.ToString();
+                    repository.Update(roles);
+                    respuesta = true;
+                }
+                else {
+                    var Identificador = Guid.NewGuid();
+                    AspNetRoles aspNet = new AspNetRoles
+                    {
+                        Id = Identificador.ToString(),
+                        Name = aspNetRolesDM.Name,
+                        NormalizedName = aspNetRolesDM.Name.ToUpper(),
+                        ConcurrencyStamp = DateTime.Now.Date.ToString()
+                    };
+                    repository.Insert(aspNet);
+                    respuesta = true;
+                }
+               
+            }
+            return respuesta;
+        }
     }
 }

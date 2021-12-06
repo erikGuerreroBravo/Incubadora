@@ -161,15 +161,45 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\admin-modal-style.css" />
+    <Content Include="Content\css\dataTables.bootstrap.css" />
+    <Content Include="Content\css\datatables.css" />
+    <Content Include="Content\css\datatables.min.css" />
+    <Content Include="Content\css\tables\dataTables.bootstrap.css" />
+    <Content Include="Content\css\tables\dataTables.bootstrap.min.css" />
+    <Content Include="Content\css\tables\dataTables.bootstrap4.css" />
+    <Content Include="Content\css\tables\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\css\tables\dataTables.jqueryui.css" />
+    <Content Include="Content\css\tables\dataTables.jqueryui.min.css" />
+    <Content Include="Content\css\tables\dataTables.material.css" />
+    <Content Include="Content\css\tables\dataTables.material.min.css" />
+    <Content Include="Content\css\tables\jquery.dataTables.css" />
+    <Content Include="Content\css\tables\jquery.dataTables.min.css" />
+    <Content Include="Content\js\datatables.js" />
+    <Content Include="Content\js\datatables.min.js" />
     <Content Include="Content\js\roles\validate-roles.js" />
+    <Content Include="Content\js\tables\dataTables.bootstrap.js" />
+    <Content Include="Content\js\tables\dataTables.bootstrap.min.js" />
+    <Content Include="Content\js\tables\dataTables.bootstrap4.js" />
+    <Content Include="Content\js\tables\dataTables.bootstrap4.min.js" />
+    <Content Include="Content\js\tables\dataTables.dataTables.js" />
+    <Content Include="Content\js\tables\dataTables.dataTables.min.js" />
+    <Content Include="Content\js\tables\datatables.js" />
+    <Content Include="Content\js\tables\datatables.min.js" />
+    <Content Include="Content\js\tables\jquery.js" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Img\icono.png" />
     <Content Include="Img\join_sql.jpg" />
+    <Content Include="scripts\toastr.js" />
+    <Content Include="scripts\toastr.min.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Account\Create.cshtml" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
