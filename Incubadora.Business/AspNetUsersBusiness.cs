@@ -2,6 +2,7 @@
 using Incubadora.Domain;
 using Incubadora.Repository;
 using Incubadora.Repository.Infraestructure.Contract;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,11 +12,12 @@ namespace Incubadora.Business
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly AspNetUsersRepository repository;
-
+        private readonly AspNetUsersRolesRepository usersRolesRepository;
         public AspNetUsersBusiness(IUnitOfWork unitOfWork)
         {
             this.unitOfWork = unitOfWork;
             repository = new AspNetUsersRepository(this.unitOfWork);
+            usersRolesRepository = new AspNetUsersRolesRepository(this.unitOfWork);
         }
         /// <summary>
         /// Este metodo se encarga de consultar a todos los usuarios del sistema
@@ -36,5 +38,57 @@ namespace Incubadora.Business
             }).ToList();
             return usuarios;
         }
+
+        public bool AddUpdateUser(AspNetUsersDomainModel aspNetUsersDM)
+        {
+            bool respuesta = false;
+            if (aspNetUsersDM != null)
+            {
+
+                AspNetUsers usuario = repository.SingleOrDefault(p => p.Id == aspNetUsersDM.Id);
+                if (usuario != null)
+                {
+                    usuario.UserName = aspNetUsersDM.UserName;
+                    usuario.PasswordHash = aspNetUsersDM.PasswordHash;
+                    usuario.PhoneNumber = aspNetUsersDM.PhoneNumber;
+                    repository.Update(usuario);
+                    respuesta = true;
+                }
+                else
+                {
+                    var Identificador = Guid.NewGuid();
+                    AspNetUsers aspNetUsers = new AspNetUsers
+                    {
+                        Id = Identificador.ToString(),
+                        UserName = aspNetUsersDM.UserName,
+                        PasswordHash = aspNetUsersDM.PasswordHash,
+                        
+                    };
+                    AspNetRoles roles = new AspNetRoles { Id = aspNetUsersDM.AspNetRolesDomainModel.Id };
+
+                    AspNetUserRoles userRoles = new AspNetUserRoles
+                    {
+                        AspNetUsers = aspNetUsers,
+                        AspNetRoles = roles
+                    };
+                    usersRolesRepository.Insert(userRoles);
+                    //repository.Insert(aspNetUsers);
+                    respuesta = true;
+                }
+
+            }
+            return respuesta;
+        }
+
+
+
+
+
+
+
+
+
+
+
     }
 }

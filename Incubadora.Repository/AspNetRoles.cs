@@ -18,7 +18,7 @@ namespace Incubadora.Repository
         public AspNetRoles()
         {
             this.AspNetRoleClaims = new HashSet<AspNetRoleClaims>();
-            this.AspNetUsers = new HashSet<AspNetUsers>();
+            this.AspNetUserRoles = new HashSet<AspNetUserRoles>();
         }
     
         public string Id { get; set; }
@@ -29,6 +29,6 @@ namespace Incubadora.Repository
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetRoleClaims> AspNetRoleClaims { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AspNetUsers> AspNetUsers { get; set; }
+        public virtual ICollection<AspNetUserRoles> AspNetUserRoles { get; set; }
     }
 }

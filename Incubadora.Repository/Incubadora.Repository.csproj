@@ -67,10 +67,14 @@
     <Compile Include="AspNetUserLogins.cs">
       <DependentUpon>IncubadoraModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AspNetUserRoles.cs">
+      <DependentUpon>IncubadoraModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="AspNetUsers.cs">
       <DependentUpon>IncubadoraModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AspNetUsersRepository.cs" />
+    <Compile Include="AspNetUsersRolesRepository.cs" />
     <Compile Include="AspNetUserTokens.cs">
       <DependentUpon>IncubadoraModel.tt</DependentUpon>
     </Compile>
