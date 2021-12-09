@@ -14,7 +14,7 @@ namespace Incubadora.Infraestructure
 
             //entidad AspNetUsers
             CreateMap<AspNetUsersDomainModel, AspNetUsersVM>();
-            CreateMap<AspNetUsers, AspNetUsersDomainModel>();
+            CreateMap<AspNetUsersVM, AspNetUsersDomainModel>();
         }
         public static void Run()
         {

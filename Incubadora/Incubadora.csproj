@@ -77,6 +77,9 @@
     <Reference Include="Microsoft.Owin.Security.Google, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.Google.4.2.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.2.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
@@ -215,6 +218,7 @@
     <Content Include="Content\js\tables\datatables.js" />
     <Content Include="Content\js\tables\datatables.min.js" />
     <Content Include="Content\js\tables\jquery.js" />
+    <Content Include="Content\js\usuarios\validate-usuarios.js" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="Global.asax" />
@@ -249,6 +253,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Recursos\Recursos_Sistema.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recursos_Sistema.resx</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\AspNetRolesVM.cs" />
     <Compile Include="ViewModels\AspNetUsersVM.cs" />
@@ -391,10 +400,20 @@
       <Project>{CA168FC6-ABB1-4AF6-94D1-500DF0361547}</Project>
       <Name>Incubadora.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Incubadora.Encrypt\Incubadora.Encrypt.csproj">
+      <Project>{09944d8a-5581-4d26-bd03-7dfa5b4a5f11}</Project>
+      <Name>Incubadora.Encrypt</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Incubadora.Repository\Incubadora.Repository.csproj">
       <Project>{3CBDFF9A-9FCA-42B7-B82B-9DA6A9DB48F1}</Project>
       <Name>Incubadora.Repository</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Recursos\Recursos_Sistema.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Recursos_Sistema.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

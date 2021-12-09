@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Incubadora.Domain", "Incuba
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Incubadora.Repository", "Incubadora.Repository\Incubadora.Repository.csproj", "{3CBDFF9A-9FCA-42B7-B82B-9DA6A9DB48F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Incubadora.Encrypt", "Incubadora.Encrypt\Incubadora.Encrypt.csproj", "{09944D8A-5581-4D26-BD03-7DFA5B4A5F11}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3CBDFF9A-9FCA-42B7-B82B-9DA6A9DB48F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CBDFF9A-9FCA-42B7-B82B-9DA6A9DB48F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CBDFF9A-9FCA-42B7-B82B-9DA6A9DB48F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09944D8A-5581-4D26-BD03-7DFA5B4A5F11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09944D8A-5581-4D26-BD03-7DFA5B4A5F11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09944D8A-5581-4D26-BD03-7DFA5B4A5F11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09944D8A-5581-4D26-BD03-7DFA5B4A5F11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -16,10 +16,10 @@ namespace Incubadora.App_Start
             app.UseCookieAuthentication(
                new Microsoft.Owin.Security.Cookies.CookieAuthenticationOptions()
                {
-                    //especificamos el tipo de autenticacion que vamos a necesitar
-                    AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                    //login path indica que debe cambiar al status 401 unauthorized por el status 302 el cual nos redicrecciona a una ruta especifica
-                    LoginPath = new PathString("/Account/login")
+                   //especificamos el tipo de autenticacion que vamos a necesitar
+                   AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
+                   //login path indica que debe cambiar al status 401 unauthorized por el status 302 el cual nos redicrecciona a una ruta especifica
+                   LoginPath = new PathString("/Account/login")
 
                }
                );

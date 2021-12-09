@@ -21,6 +21,7 @@ namespace Incubadora
             container.RegisterType<IUnitOfWork, UnitOfWork>();
             
             container.RegisterType<IAspNetRolesBusiness, AspNetRolesBusiness>();
+            container.RegisterType<IAspNetUsersBusiness, AspNetUsersBusiness>();
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }

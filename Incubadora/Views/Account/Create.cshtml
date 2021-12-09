@@ -1,6 +1,6 @@
-﻿
+﻿@model Incubadora.ViewModels.AspNetUsersVM
 @{
-    
+
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -52,7 +52,7 @@
                                             <span class="glyphicon glyphicon-edit"></span>
                                             Agregar Roles
                                         </a>
-                                        
+
                                     </li>
                                     <li class="list-group-item list-unstyled list-group-unbordered">
                                         <button value="Roles" class="container-fluid btn btn-sm btn-default" id="btnPerfiles">
@@ -91,28 +91,36 @@
                         <h5 class="modal-title"><label style="font-size:medium;">Agregar Usuario</label></h5>
                     </div>
                     <div class="modal-body" id="ModalBody">
-                        <form id="frmGuardar" method="post">
+
+                        @using (Html.BeginForm("Create","Account"))
+                        {
+                            @Html.AntiForgeryToken()
+                            @*<form id="frmGuardar" method="post">*@
                             <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11">
                                 <div class="form-group  has-feedback">
-                                   <input type="text" placeholder="Ingresa el nombre de Usuario" class="form-control input-sm" id="txtNombreUsuario" required />
+                                    @Html.TextBoxFor(model => model.UserName, new { @class = "form-control input-sm", placeholder = "Nombre de Usuario", required = "", pattern = "^[a-záéíóúñA-ZÁÉÍÓÚÑ ]+$" })
+                                    @*<input type="text" placeholder="Ingresa el nombre de Usuario" class="form-control input-sm" id="txtNombreUsuario" required />*@
                                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                                 </div>
                                 <div class="form-group has-feedback">
-                                    <input type="password" placeholder="Ingresa el Password" class="form-control input-sm" id="txtPassword" required />
+                                    @Html.PasswordFor(model => model.PasswordHash, new { @class = "form-control input-sm", placeholder = "Password del Usuario", required = ""})
+                                    @*<input type="password" placeholder="Ingresa el Password" class="form-control input-sm" id="txtPassword" required />*@
                                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                                 </div>
                                 <div class="form-group has-feedback">
-                                    @Html.DropDownList("IdRol", null,new { @class="form-control input-sm", id="IdRol"})
+                                    @Html.DropDownList("IdRol", null, new { @class = "form-control input-sm", id = "IdRol" })
                                 </div>
                                 <hr />
-                                <button type="submit" class="pull-right btn btn-sm btn-success">Guardar</button>
+                                <button type="submit" class="pull-right btn btn-sm btn-success" id="btnGuardar">Guardar</button>
+
                             </div>
                             <div class="modal-footer"></div>
-                        </form>
+                            @*</form>*@
+                        }
                     </div>
-                   
+
                 </div>
-                
+
             </div>
         </div>
         <input type="hidden" id="hiddenSolicitudId" />
@@ -120,12 +128,13 @@
     </div>
 </div>
 <script src="~/Content/js/plugins/jquery/jquery-3.3.1.min.js"></script>
+<script src="~/Content/js/usuarios/validate-usuarios.js"></script>
 <script>
 
     $(window).on('load', function () {
         $('#windowModal').modal({ backdrop: 'static', keyboard: false });
     });
 
-   
-    
+
+
 </script>
