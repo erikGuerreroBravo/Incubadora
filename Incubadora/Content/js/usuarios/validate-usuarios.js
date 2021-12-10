@@ -65,7 +65,7 @@
             "aaData": response,
             "aoColumns": [
                 { "mData": "UserName" },
-                { "mData": "AspNetRolesVM.Name" },
+                ///{ "mData": "AspNetRolesVM.Name" },
                 {
                     "mData": "Id",
                     "render": (Id, type, full, meta) => {

@@ -52,9 +52,16 @@ namespace Incubadora.Controllers
                 usersDomainModel.PasswordHash=Funciones.Encrypt(usersDomainModel.PasswordHash);
                 rolesDomainModel.Id = IdRol;
                 usersDomainModel.AspNetRolesDomainModel = rolesDomainModel;
-
-                ViewBag.IdRol = new SelectList(rolesBusiness.GetRoles(), "Id", "Name");
-                return View();
+                if (usersBusiness.AddUpdateUser(usersDomainModel))
+                {
+                    ViewBag.IdRol = new SelectList(rolesBusiness.GetRoles(), "Id", "Name");
+                    return View();
+                }
+                else {
+                    Log.Error("Ocurrio una exepcion al intentar guardar el usuario");
+                    loggerdb.Error("Error en la insercion del usuario");
+                    return RedirectToAction("InternalServerError", "Error");
+                }
             }
             catch (System.Exception ex)
             {

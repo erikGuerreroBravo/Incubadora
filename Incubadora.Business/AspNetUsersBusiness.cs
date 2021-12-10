@@ -39,6 +39,11 @@ namespace Incubadora.Business
             return usuarios;
         }
 
+        /// <summary>
+        /// Este metodo se encarga de realizar la insercion o actualizacion de una entidad AspNetUsersDM
+        /// </summary>
+        /// <param name="aspNetUsersDM">la entidad aspnetuserdm</param>
+        /// <returns>un valor true/false</returns>
         public bool AddUpdateUser(AspNetUsersDomainModel aspNetUsersDM)
         {
             bool respuesta = false;
@@ -64,15 +69,17 @@ namespace Incubadora.Business
                         PasswordHash = aspNetUsersDM.PasswordHash,
                         
                     };
+                    
                     AspNetRoles roles = new AspNetRoles { Id = aspNetUsersDM.AspNetRolesDomainModel.Id };
 
                     AspNetUserRoles userRoles = new AspNetUserRoles
                     {
-                        AspNetUsers = aspNetUsers,
-                        AspNetRoles = roles
+                        
+                        UserId = aspNetUsers.Id,
+                        RoleId = roles.Id
                     };
-                    usersRolesRepository.Insert(userRoles);
-                    //repository.Insert(aspNetUsers);
+                    aspNetUsers.AspNetUserRoles.Add(userRoles);
+                    repository.Insert(aspNetUsers);
                     respuesta = true;
                 }
 
