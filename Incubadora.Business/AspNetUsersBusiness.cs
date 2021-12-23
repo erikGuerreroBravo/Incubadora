@@ -40,6 +40,36 @@ namespace Incubadora.Business
         }
 
         /// <summary>
+        /// Este metodo se encarga de consultar a los usuarios  con sus respectivos roles
+        /// </summary>
+        /// <returns>una lista de usuariosDomainModel</returns>
+        public List<AspNetUsersDomainModel> GetUserRoles()
+        {
+            List<AspNetUsersDomainModel> usuarios = new List<AspNetUsersDomainModel>();
+            var users= repository.GetAll().ToList();
+            foreach (var u in users)
+            {
+                AspNetUsersDomainModel aspNetUsers = new AspNetUsersDomainModel();
+                aspNetUsers.UserName = u.UserName;
+                aspNetUsers.Id = u.Id;
+                AspNetRolesDomainModel aspNetRoles = new AspNetRolesDomainModel();
+                foreach (var r in u.AspNetUserRoles)
+                {
+                    aspNetRoles.Name=r.AspNetRoles.Name;
+                    aspNetRoles.Id = r.AspNetRoles.Id;
+                }
+                if(aspNetRoles !=null)
+                {
+                    aspNetUsers.AspNetRolesDomainModel = aspNetRoles;
+                }
+                usuarios.Add(aspNetUsers);
+               
+            }
+            return usuarios;
+        }
+
+
+        /// <summary>
         /// Este metodo se encarga de realizar la insercion o actualizacion de una entidad AspNetUsersDM
         /// </summary>
         /// <param name="aspNetUsersDM">la entidad aspnetuserdm</param>

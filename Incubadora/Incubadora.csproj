@@ -224,6 +224,7 @@
     <Content Include="Global.asax" />
     <Content Include="Img\icono.png" />
     <Content Include="Img\join_sql.jpg" />
+    <Content Include="Img\user-anonimo.png" />
     <Content Include="scripts\toastr.js" />
     <Content Include="scripts\toastr.min.js" />
     <Content Include="Web.config" />
@@ -237,6 +238,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Views\Rol\Create.cshtml" />
+    <Content Include="Views\Account\Perfil.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

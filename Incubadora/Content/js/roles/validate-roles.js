@@ -16,7 +16,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: "Get",
-        url: "http://localhost:50176/Rol/GetRoles",
+        url: "/Rol/GetRoles",
         dataType: "Json",
         success: function (data) {
            BindDataTable(data);

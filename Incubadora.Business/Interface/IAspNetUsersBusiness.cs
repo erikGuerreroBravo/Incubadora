@@ -12,5 +12,11 @@ namespace Incubadora.Business.Interface
         /// <param name="aspNetUsersDM">la entidad aspnetuserdm</param>
         /// <returns>un valor true/false</returns>
         bool AddUpdateUser(AspNetUsersDomainModel aspNetUsersDM);
+        
+        /// <summary>
+        /// Este metodo se encarga de consultar a los usuarios  con sus respectivos roles
+        /// </summary>
+        /// <returns>una lista de usuariosDomainModel</returns>
+        List<AspNetUsersDomainModel> GetUserRoles();
     }
 }

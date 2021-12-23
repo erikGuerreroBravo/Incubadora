@@ -21,7 +21,7 @@ namespace Incubadora.Controllers
             usersBusiness = _usersBusiness;
         }
 
-
+        #region Metodos de Insercion
         // GET: Account
         public ActionResult Create()
         {
@@ -71,21 +71,28 @@ namespace Incubadora.Controllers
                 return RedirectToAction("InternalServerError", "Error");
             }
         }
-
+        #endregion
 
         public ActionResult Login()
         {
             return View();
         }
 
+        [HttpGet]
+        public ActionResult Perfil()
+        {
+            return View();
+        }
 
+
+        #region Metodos de Consulta
         [HttpGet]
         public JsonResult GetUsuarios()
         {
             try
             {
                 var usuariosVM = new List<AspNetUsersVM>();
-                var usuariosDM = usersBusiness.GetUsers();
+                var usuariosDM = usersBusiness.GetUserRoles();
                 AutoMapper.Mapper.Map(usuariosDM,usuariosVM);
                 return Json(usuariosVM, JsonRequestBehavior.AllowGet);
             }
@@ -97,6 +104,6 @@ namespace Incubadora.Controllers
                 return Json(Recursos.Recursos_Sistema.ERROR_LOAD_FILE_JSON,JsonRequestBehavior.AllowGet);
             }
         }
-
+        #endregion
     }
 }

@@ -55,10 +55,10 @@
 
                                     </li>
                                     <li class="list-group-item list-unstyled list-group-unbordered">
-                                        <button value="Roles" class="container-fluid btn btn-sm btn-default" id="btnPerfiles">
-                                            <i class="fas fa-users-cog"></i>
-                                            Agregar Perfiles
-                                        </button>
+                                        <a href="@Url.Action("Perfil","Account")" class="container-fluid btn btn-sm btn-default" id="btnPerfiles">
+                                            <span class="fas fa-users-cog"></span>
+                                                Agregar Perfiles
+                                        </a>
                                     </li>
                                     <li class="list-group-item list-unstyled list-group-unbordered">
                                         <button value="Roles" class="container-fluid btn btn-sm btn-danger" id="btnPerfiles">
@@ -85,6 +85,9 @@
                                             Nombre de Usuario
                                         </th>
                                         <th>
+                                            Rol Asignado
+                                        </th>
+                                        <th>
                                             Acciones
                                         </th>
                                     </tr>
@@ -102,7 +105,6 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header modal-title-specific">
-                        <!--style="background-color:#3C8DBC;color:white;"-->
                         <a href="#" class="close" data-dismiss="modal">&times;</a>
                         <h5 class="modal-title"><label style="font-size:medium;">Agregar Usuario</label></h5>
                     </div>
@@ -111,7 +113,7 @@
                         @using (Html.BeginForm("Create","Account"))
                         {
                             @Html.AntiForgeryToken()
-                            @*<form id="frmGuardar" method="post">*@
+                            
                             <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11">
                                 <div class="form-group  has-feedback">
                                     @Html.TextBoxFor(model => model.UserName, new { @class = "form-control input-sm", placeholder = "Nombre de Usuario", required = "", pattern = "^[a-záéíóúñA-ZÁÉÍÓÚÑ ]+$" })
@@ -131,7 +133,7 @@
 
                             </div>
                             <div class="modal-footer"></div>
-                            @*</form>*@
+                            
                         }
                    
                     </div>
