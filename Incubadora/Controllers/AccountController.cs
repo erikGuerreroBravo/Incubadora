@@ -81,6 +81,7 @@ namespace Incubadora.Controllers
         [HttpGet]
         public ActionResult Perfil()
         {
+            //se modifico el perfil del usuario
             return View();
         }
 
