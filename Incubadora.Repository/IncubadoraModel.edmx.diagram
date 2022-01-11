@@ -19,6 +19,7 @@
         <AssociationConnector Association="IncubadoraDataBaseModel.FK_AspNetUserLogins_AspNetUsers_UserId" />
         <AssociationConnector Association="IncubadoraDataBaseModel.FK_AspNetUserRoles_AspNetUsers" />
         <AssociationConnector Association="IncubadoraDataBaseModel.FK_AspNetUserTokens_AspNetUsers_UserId" />
+        <EntityTypeShape EntityType="IncubadoraDataBaseModel.CatCarreras" Width="1.5" PointX="9.75" PointY="2" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

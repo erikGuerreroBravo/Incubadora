@@ -206,6 +206,7 @@
     <Content Include="Content\css\tables\dataTables.material.min.css" />
     <Content Include="Content\css\tables\jquery.dataTables.css" />
     <Content Include="Content\css\tables\jquery.dataTables.min.css" />
+    <Content Include="Content\js\carreras\validate-carreras.js" />
     <Content Include="Content\js\datatables.js" />
     <Content Include="Content\js\datatables.min.js" />
     <Content Include="Content\js\roles\validate-roles.js" />
@@ -239,6 +240,7 @@
     </None>
     <Content Include="Views\Rol\Create.cshtml" />
     <Content Include="Views\Account\Perfil.cshtml" />
+    <Content Include="Views\Carreras\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -250,6 +252,7 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CarrerasController.cs" />
     <Compile Include="Controllers\RolController.cs" />
     <Compile Include="Infraestructure\AutomaperWebProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -263,6 +266,7 @@
     </Compile>
     <Compile Include="ViewModels\AspNetRolesVM.cs" />
     <Compile Include="ViewModels\AspNetUsersVM.cs" />
+    <Compile Include="ViewModels\CatCarreraVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -15,6 +15,12 @@ namespace Incubadora.Infraestructure
             //entidad AspNetUsers
             CreateMap<AspNetUsersDomainModel, AspNetUsersVM>().ForMember(x=>x.AspNetRolesVM, x=>x.MapFrom(p=>p.AspNetRolesDomainModel));
             CreateMap<AspNetUsersVM, AspNetUsersDomainModel>().ForMember(x=>x.AspNetRolesDomainModel, x=>x.MapFrom(p=>p.AspNetRolesVM));
+
+            ///catcarreras
+            CreateMap<CatCarrerasDomainModel, CatCarreraVM>();
+            CreateMap<CatCarreraVM, CatCarrerasDomainModel>();
+
+
         }
         public static void Run()
         {

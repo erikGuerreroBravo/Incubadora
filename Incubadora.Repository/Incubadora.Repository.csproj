@@ -78,6 +78,10 @@
     <Compile Include="AspNetUserTokens.cs">
       <DependentUpon>IncubadoraModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CatCarreras.cs">
+      <DependentUpon>IncubadoraModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CatCarrerasRepository.cs" />
     <Compile Include="IncubadoraModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,6 +123,7 @@
       <DependentUpon>IncubadoraModel.edmx</DependentUpon>
       <LastGenOutput>IncubadoraModel.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="IncubadoraModel.edmx.sql" />
     <Content Include="IncubadoraModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>IncubadoraModel.edmx</DependentUpon>
