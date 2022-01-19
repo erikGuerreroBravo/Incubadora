@@ -20,6 +20,10 @@ namespace Incubadora.Infraestructure
             CreateMap<CatCarrerasDomainModel, CatCarreraVM>();
             CreateMap<CatCarreraVM, CatCarrerasDomainModel>();
 
+            //calendarizacion
+            CreateMap<CalendarizacionDomainModel, CalendarizacionVM>();//.ForMember(x=> x.dteInicio, x=> x.MapFrom(p=>p.dteInicio.ToLongDateString() ))
+                //.ForMember(x=>x.dteFin, x=>x.MapFrom(p=>p.dteFin.ToLongDateString()));
+            CreateMap<CalendarizacionVM, CalendarizacionDomainModel>();
 
         }
         public static void Run()

@@ -34,5 +34,6 @@ namespace Incubadora.Repository
         public virtual DbSet<AspNetUserRoles> AspNetUserRoles { get; set; }
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
         public virtual DbSet<CatCarreras> CatCarreras { get; set; }
+        public virtual DbSet<Calendarizacion> Calendarizacion { get; set; }
     }
 }

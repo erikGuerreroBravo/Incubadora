@@ -78,6 +78,10 @@
     <Compile Include="AspNetUserTokens.cs">
       <DependentUpon>IncubadoraModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Calendarizacion.cs">
+      <DependentUpon>IncubadoraModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CalendarizacionRepository.cs" />
     <Compile Include="CatCarreras.cs">
       <DependentUpon>IncubadoraModel.tt</DependentUpon>
     </Compile>

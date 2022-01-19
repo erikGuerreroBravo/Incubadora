@@ -105,6 +105,9 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -193,9 +196,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\admin-modal-style.css" />
-    <Content Include="Content\css\dataTables.bootstrap.css" />
     <Content Include="Content\css\datatables.css" />
     <Content Include="Content\css\datatables.min.css" />
+    <Content Include="Content\css\main.css" />
+    <Content Include="Content\css\main.min.css" />
     <Content Include="Content\css\tables\dataTables.bootstrap.css" />
     <Content Include="Content\css\tables\dataTables.bootstrap.min.css" />
     <Content Include="Content\css\tables\dataTables.bootstrap4.css" />
@@ -209,6 +213,90 @@
     <Content Include="Content\js\carreras\validate-carreras.js" />
     <Content Include="Content\js\datatables.js" />
     <Content Include="Content\js\datatables.min.js" />
+    <Content Include="Content\js\fullcalendar.min.js" />
+    <Content Include="Content\js\locales-all.js" />
+    <Content Include="Content\js\locales-all.min.js" />
+    <Content Include="Content\js\locales\af.js" />
+    <Content Include="Content\js\locales\ar-dz.js" />
+    <Content Include="Content\js\locales\ar-kw.js" />
+    <Content Include="Content\js\locales\ar-ly.js" />
+    <Content Include="Content\js\locales\ar-ma.js" />
+    <Content Include="Content\js\locales\ar-sa.js" />
+    <Content Include="Content\js\locales\ar-tn.js" />
+    <Content Include="Content\js\locales\ar.js" />
+    <Content Include="Content\js\locales\az.js" />
+    <Content Include="Content\js\locales\bg.js" />
+    <Content Include="Content\js\locales\bn.js" />
+    <Content Include="Content\js\locales\bs.js" />
+    <Content Include="Content\js\locales\ca.js" />
+    <Content Include="Content\js\locales\cs.js" />
+    <Content Include="Content\js\locales\cy.js" />
+    <Content Include="Content\js\locales\da.js" />
+    <Content Include="Content\js\locales\de-at.js" />
+    <Content Include="Content\js\locales\de.js" />
+    <Content Include="Content\js\locales\el.js" />
+    <Content Include="Content\js\locales\en-au.js" />
+    <Content Include="Content\js\locales\en-gb.js" />
+    <Content Include="Content\js\locales\en-nz.js" />
+    <Content Include="Content\js\locales\eo.js" />
+    <Content Include="Content\js\locales\es-us.js" />
+    <Content Include="Content\js\locales\es.js" />
+    <Content Include="Content\js\locales\et.js" />
+    <Content Include="Content\js\locales\eu.js" />
+    <Content Include="Content\js\locales\fa.js" />
+    <Content Include="Content\js\locales\fi.js" />
+    <Content Include="Content\js\locales\fr-ca.js" />
+    <Content Include="Content\js\locales\fr-ch.js" />
+    <Content Include="Content\js\locales\fr.js" />
+    <Content Include="Content\js\locales\gl.js" />
+    <Content Include="Content\js\locales\he.js" />
+    <Content Include="Content\js\locales\hi.js" />
+    <Content Include="Content\js\locales\hr.js" />
+    <Content Include="Content\js\locales\hu.js" />
+    <Content Include="Content\js\locales\hy-am.js" />
+    <Content Include="Content\js\locales\id.js" />
+    <Content Include="Content\js\locales\is.js" />
+    <Content Include="Content\js\locales\it.js" />
+    <Content Include="Content\js\locales\ja.js" />
+    <Content Include="Content\js\locales\ka.js" />
+    <Content Include="Content\js\locales\kk.js" />
+    <Content Include="Content\js\locales\km.js" />
+    <Content Include="Content\js\locales\ko.js" />
+    <Content Include="Content\js\locales\ku.js" />
+    <Content Include="Content\js\locales\lb.js" />
+    <Content Include="Content\js\locales\lt.js" />
+    <Content Include="Content\js\locales\lv.js" />
+    <Content Include="Content\js\locales\mk.js" />
+    <Content Include="Content\js\locales\ms.js" />
+    <Content Include="Content\js\locales\nb.js" />
+    <Content Include="Content\js\locales\ne.js" />
+    <Content Include="Content\js\locales\nl.js" />
+    <Content Include="Content\js\locales\nn.js" />
+    <Content Include="Content\js\locales\pl.js" />
+    <Content Include="Content\js\locales\pt-br.js" />
+    <Content Include="Content\js\locales\pt.js" />
+    <Content Include="Content\js\locales\ro.js" />
+    <Content Include="Content\js\locales\ru.js" />
+    <Content Include="Content\js\locales\si-lk.js" />
+    <Content Include="Content\js\locales\sk.js" />
+    <Content Include="Content\js\locales\sl.js" />
+    <Content Include="Content\js\locales\sm.js" />
+    <Content Include="Content\js\locales\sq.js" />
+    <Content Include="Content\js\locales\sr-cyrl.js" />
+    <Content Include="Content\js\locales\sr.js" />
+    <Content Include="Content\js\locales\sv.js" />
+    <Content Include="Content\js\locales\ta-in.js" />
+    <Content Include="Content\js\locales\th.js" />
+    <Content Include="Content\js\locales\tr.js" />
+    <Content Include="Content\js\locales\ug.js" />
+    <Content Include="Content\js\locales\uk.js" />
+    <Content Include="Content\js\locales\uz.js" />
+    <Content Include="Content\js\locales\vi.js" />
+    <Content Include="Content\js\locales\zh-cn.js" />
+    <Content Include="Content\js\locales\zh-tw.js" />
+    <Content Include="Content\js\main.js" />
+    <Content Include="Content\js\main.min.js" />
+    <Content Include="Content\js\moment.min.js" />
     <Content Include="Content\js\roles\validate-roles.js" />
     <Content Include="Content\js\tables\dataTables.bootstrap.js" />
     <Content Include="Content\js\tables\dataTables.bootstrap.min.js" />
@@ -241,6 +329,7 @@
     <Content Include="Views\Rol\Create.cshtml" />
     <Content Include="Views\Account\Perfil.cshtml" />
     <Content Include="Views\Carreras\Create.cshtml" />
+    <Content Include="Views\Calendarizacion\Eventos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -252,6 +341,7 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CalendarizacionController.cs" />
     <Compile Include="Controllers\CarrerasController.cs" />
     <Compile Include="Controllers\RolController.cs" />
     <Compile Include="Infraestructure\AutomaperWebProfile.cs" />
@@ -266,6 +356,7 @@
     </Compile>
     <Compile Include="ViewModels\AspNetRolesVM.cs" />
     <Compile Include="ViewModels\AspNetUsersVM.cs" />
+    <Compile Include="ViewModels\CalendarizacionVM.cs" />
     <Compile Include="ViewModels\CatCarreraVM.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -81,6 +81,18 @@
           <Property Name="Name" Type="nvarchar" MaxLength="450" Nullable="false" />
           <Property Name="Value" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="Calendarizacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="strAsunto" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="strDescripcion" Type="nvarchar" MaxLength="300" />
+          <Property Name="dteInicio" Type="datetime" Nullable="false" />
+          <Property Name="dteFin" Type="datetime" Nullable="false" />
+          <Property Name="strColorTema" Type="nvarchar" MaxLength="10" />
+          <Property Name="boolIsFullDay" Type="bit" />
+        </EntityType>
         <EntityType Name="CatCarreras">
           <Key>
             <PropertyRef Name="Id" />
@@ -193,6 +205,7 @@
           <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUserTokens" EntityType="Self.AspNetUserTokens" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Calendarizacion" EntityType="Self.Calendarizacion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CatCarreras" EntityType="Self.CatCarreras" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_AspNetRoleClaims_AspNetRoles_RoleId" Association="Self.FK_AspNetRoleClaims_AspNetRoles_RoleId">
@@ -317,6 +330,7 @@
             <End Role="AspNetUserTokens" EntitySet="AspNetUserTokens" />
           </AssociationSet>
           <EntitySet Name="CatCarreras" EntityType="IncubadoraDataBaseModel.CatCarreras" />
+          <EntitySet Name="Calendarizacion" EntityType="IncubadoraDataBaseModel.Calendarizacion" />
           </EntityContainer>
         <EntityType Name="AspNetRoles">
           <Key>
@@ -451,6 +465,18 @@
           <Property Name="StrValor" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="StrDescripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="Calendarizacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="strAsunto" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="strDescripcion" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="dteInicio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dteFin" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="strColorTema" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="boolIsFullDay" Type="Boolean" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -559,6 +585,19 @@
               <MappingFragment StoreEntitySet="CatCarreras">
                 <ScalarProperty Name="StrDescripcion" ColumnName="StrDescripcion" />
                 <ScalarProperty Name="StrValor" ColumnName="StrValor" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Calendarizacion">
+            <EntityTypeMapping TypeName="IncubadoraDataBaseModel.Calendarizacion">
+              <MappingFragment StoreEntitySet="Calendarizacion">
+                <ScalarProperty Name="boolIsFullDay" ColumnName="boolIsFullDay" />
+                <ScalarProperty Name="strColorTema" ColumnName="strColorTema" />
+                <ScalarProperty Name="dteFin" ColumnName="dteFin" />
+                <ScalarProperty Name="dteInicio" ColumnName="dteInicio" />
+                <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+                <ScalarProperty Name="strAsunto" ColumnName="strAsunto" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
